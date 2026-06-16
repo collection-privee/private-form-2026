@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Un avis qui compte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background-color: #0A0A0A;
+    color: #D8D4C9;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrapper {
+    min-height: 100vh;
+    padding: 60px 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+    background-color: #0A0A0A;
+    border: 1px solid #C9A961;
+    padding: 56px 48px;
+  }
+
+  /* HEADER */
+  .header-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #C9A961;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .hairline {
+    width: 40px;
+    height: 1px;
+    background-color: #C9A961;
+    margin: 24px auto;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #C9A961;
+    opacity: 0.4;
+    margin: 32px 0;
+  }
+
+  /* TITRE */
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: #F5F1E8;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* INTRO */
+  .intro p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #D8D4C9;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* NOMS */
+  .name-block {
+    margin-bottom: 32px;
+  }
+
+  .name-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #C9A961;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .name-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 34px;
+    line-height: 1.2;
+    color: #F5F1E8;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* QUESTIONS */
+  .questions-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #C9A961;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .question {
+    margin-bottom: 32px;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .question-number {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    color: #C9A961;
+    font-style: italic;
+    font-weight: 500;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  .question-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #F5F1E8;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  .question-hint {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #999184;
+    font-weight: 300;
+  }
+
+  /* TEXTAREA */
+  textarea, input[type="email"] {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    color: #F5F1E8;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 14px 16px;
+    margin-top: 8px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  textarea {
+    min-height: 90px;
+  }
+
+  textarea:focus, input[type="email"]:focus {
+    outline: none;
+    border-color: #C9A961;
+  }
+
+  textarea::placeholder, input::placeholder {
+    color: #5A5650;
+    font-style: italic;
+  }
+
+  /* EMAIL FIELD */
+  .email-field {
+    margin-top: 16px;
+  }
+
+  .email-label {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    color: #D8D4C9;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  /* SUBMIT */
+  .submit-wrapper {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  button[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #C9A961;
+    color: #C9A961;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 16px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #C9A961;
+    color: #0A0A0A;
+  }
+
+  /* SIGNATURE */
+  .signature {
+    text-align: center;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    color: #F5F1E8;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 32px;
+  }
+
+  /* CONFIRMATION (caché par défaut) */
+  .confirmation {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .confirmation-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    color: #F5F1E8;
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .confirmation-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #D8D4C9;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .wrapper { padding: 32px 16px; }
+    .container { padding: 32px 24px; }
+    h1 { font-size: 26px; }
+    .name-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="container">
+
+    <!-- FORM -->
+    <form id="naming-form" action="https://api.web3forms.com/submit" method="POST">
+
+      <!-- WEB3FORMS CONFIG -->
+      <input type="hidden" name="access_key" value="1a70bd9d-4735-4391-94f7-b6283be30559">
+      <input type="hidden" name="subject" value="Test naming — Nouveau retour">
+      <input type="hidden" name="from_name" value="Test naming privé">
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <!-- HEADER -->
+      <p class="header-label">INVITATION CONFIDENTIELLE</p>
+      <div class="hairline"></div>
+
+      <!-- TITRE -->
+      <h1>Votre avis sur<br>un nouveau projet</h1>
+
+      <!-- INTRO -->
+      <div class="intro">
+        <p>Je prépare le lancement d'une nouvelle maison dédiée aux voyages d'exception &mdash; une approche profondément artisanale, fondée sur l'accès, la confiance, et une exigence absolue du détail.</p>
+        <p>Avant d'arbitrer le nom final, j'aimerais recueillir l'avis de quelques personnes dont le jugement compte pour moi. Vous en faites partie.</p>
+        <p>Six noms sont en lice. Pourriez-vous me dire, en toute spontanéité, ce qu'ils vous évoquent&nbsp;?</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- NOMS -->
+      <div class="name-block">
+        <p class="name-label">Option 01</p>
+        <h2 class="name-title">Oria Travel</h2>
+      </div>
+
+      <div class="name-block">
+        <p class="name-label">Option 02</p>
+        <h2 class="name-title">Safran Route</h2>
+      </div>
+
+      <div class="name-block">
+        <p class="name-label">Option 03</p>
+        <h2 class="name-title">Serenia Travel</h2>
+      </div>
+
+      <div class="name-block">
+        <p class="name-label">Option 04</p>
+        <h2 class="name-title">Apurva</h2>
+      </div>
+
+      <div class="name-block">
+        <p class="name-label">Option 05</p>
+        <h2 class="name-title">Anaïra</h2>
+      </div>
+
+      <div class="name-block">
+        <p class="name-label">Option 06</p>
+        <h2 class="name-title">Soréa</h2>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- QUESTIONS -->
+      <p class="questions-label">Trois questions, réponses spontanées</p>
+
+      <div class="question">
+        <div class="question-header">
+          <span class="question-number">01</span>
+          <div>
+            <p class="question-text">Lequel vous parle le plus&nbsp;?</p>
+            <p class="question-hint">Et pourquoi en un mot ou deux.</p>
+          </div>
+        </div>
+        <textarea name="q1_lequel_parle_le_plus" placeholder="Votre réponse..." required></textarea>
+      </div>
+
+      <div class="question">
+        <div class="question-header">
+          <span class="question-number">02</span>
+          <div>
+            <p class="question-text">Qu'est-ce que chacun vous évoque&nbsp;?</p>
+            <p class="question-hint">Première image, première sensation, première association. Même brute, même étrange.</p>
+          </div>
+        </div>
+        <textarea name="q2_evocations" placeholder="Oria : ... / Safran : ... / Serenia : ... / Apurva : ... / Anaïra : ... / Soréa : ..." required></textarea>
+      </div>
+
+      <div class="question">
+        <div class="question-header">
+          <span class="question-number">03</span>
+          <div>
+            <p class="question-text">Lequel vous semble le moins juste&nbsp;?</p>
+            <p class="question-hint">Celui que vous ne retiendriez pas, et la raison.</p>
+          </div>
+        </div>
+        <textarea name="q3_moins_juste" placeholder="Votre réponse..." required></textarea>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- EMAIL FIELD (pour identifier qui répond) -->
+      <div class="email-field">
+        <p class="email-label">Votre email (pour que je puisse vous remercier)</p>
+        <input type="email" name="email" placeholder="vous@exemple.com" required>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="submit-wrapper" style="margin-top:32px;">
+        <button type="submit">Envoyer ma réponse</button>
+      </div>
+
+      <!-- SIGNATURE -->
+      <p class="signature">Avec ma gratitude.</p>
+
+    </form>
+
+    <!-- CONFIRMATION (apparaît après envoi) -->
+    <div id="confirmation" class="confirmation">
+      <p class="header-label">MESSAGE BIEN REÇU</p>
+      <div class="hairline"></div>
+      <p class="confirmation-title">Merci.</p>
+      <p class="confirmation-text">Votre avis compte beaucoup et m'aidera à arbitrer la décision finale.<br>Je reviens vers vous très vite.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('naming-form');
+  const confirmation = document.getElementById('confirmation');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        alert('Une erreur est survenue. Merci de réessayer ou de me contacter directement.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma réponse';
+      }
+    } catch (error) {
+      alert('Une erreur de connexion est survenue. Merci de réessayer.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer ma réponse';
+    }
+  });
+</script>
+
+</body>
+</html>
